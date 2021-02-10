@@ -163,7 +163,9 @@ describe './lib/tic_tac_toe.rb' do
         expect(game).to receive(:gets).and_return("1")
 
         game.turn
-      end
+      end    def position_taken?(index)
+      @board[index] != " "
+  end
 
       it "calls #input_to_index, #valid_move?, and #current_player" do
         allow($stdout).to receive(:puts)
